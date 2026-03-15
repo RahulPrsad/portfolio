@@ -1,0 +1,119 @@
+/* src/components/About/About.module.css */
+.about {
+  padding: 8rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+/* Reveal animation */
+.bio, .skillsBlock {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.skillsBlock { transition-delay: 0.15s; }
+
+.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Section label */
+.sectionLabel {
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.sectionLabel::before {
+  content: '';
+  width: 2rem; height: 1px;
+  background: var(--gold);
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.heading span {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.body {
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: var(--text-dim);
+  margin-bottom: 1.2rem;
+}
+
+.btn {
+  background: var(--gold);
+  color: var(--deep);
+  padding: 0.85rem 2rem;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 0.8rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Skills grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--border);
+}
+
+.skillItem {
+  padding: 1.5rem;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s;
+}
+
+.skillItem:hover { background: rgba(232, 160, 32, 0.04); }
+.skillItem:nth-child(2n) { border-right: none; }
+.skillItem:nth-last-child(-n+2) { border-bottom: none; }
+
+.skillName {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.3rem;
+}
+
+.skillDesc {
+  font-size: 0.8rem;
+  color: rgba(245, 240, 232, 0.45);
+}
+
+@media (max-width: 900px) {
+  .about {
+    grid-template-columns: 1fr;
+    padding: 5rem 1.5rem;
+    gap: 3rem;
+  }
+}

@@ -1,0 +1,137 @@
+/* src/components/Work/Work.module.css */
+.work {
+  padding: 6rem 4rem;
+  background: rgba(232, 160, 32, 0.03);
+  border-top: 1px solid var(--border);
+}
+
+.header {
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.header.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sectionLabel {
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.sectionLabel::before {
+  content: '';
+  width: 2rem; height: 1px;
+  background: var(--gold);
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 700;
+}
+
+.heading span {
+  color: var(--gold);
+  font-style: italic;
+}
+
+/* Projects grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5px;
+}
+
+/* Card */
+.card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition:
+    border-color 0.3s,
+    background 0.3s,
+    transform 0.3s,
+    opacity 0.6s ease,
+    translate 0.6s ease;
+
+  opacity: 0;
+  translate: 0 40px;
+}
+
+.card.revealed {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 2px;
+  background: var(--gold);
+  transition: width 0.4s ease;
+}
+
+.card:hover::before { width: 100%; }
+
+.card:hover {
+  background: rgba(232, 160, 32, 0.05);
+  border-color: rgba(232, 160, 32, 0.25);
+  transform: translateY(-4px);
+}
+
+.cardNum {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  color: rgba(232, 160, 32, 0.4);
+  letter-spacing: 0.2em;
+  margin-bottom: 1.5rem;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.cardDesc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid rgba(232, 160, 32, 0.2);
+  color: rgba(232, 160, 32, 0.7);
+  padding: 0.2rem 0.6rem;
+}
+
+@media (max-width: 900px) {
+  .work { padding: 5rem 1.5rem; }
+  .grid { grid-template-columns: 1fr; }
+}

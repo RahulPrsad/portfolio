@@ -1,0 +1,87 @@
+/* src/components/Contact/Contact.module.css */
+.contact {
+  padding: 8rem 4rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.contact.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sectionLabel {
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.sectionLabel::before {
+  content: '';
+  width: 2rem; height: 1px;
+  background: var(--gold);
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 900;
+  line-height: 0.9;
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.heading em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.sub {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  max-width: 400px;
+  margin: 0 auto 3rem;
+  line-height: 1.7;
+}
+
+.email {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(232, 160, 32, 0.4);
+  padding-bottom: 0.2rem;
+  transition: border-color 0.3s;
+}
+
+.email:hover { border-color: var(--gold); }
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.socialLink {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.4);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.socialLink:hover { color: var(--gold); }
+
+@media (max-width: 768px) {
+  .contact { padding: 5rem 1.5rem; }
+}

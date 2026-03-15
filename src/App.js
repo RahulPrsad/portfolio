@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import './styles/globals.css';
+import useCursor from './hooks/useCursor';
+
+import Navbar  from './components/Navbar/Navbar';
+import Hero    from './components/Hero/Hero';
+import About   from './components/About/About';
+import Work    from './components/Work/Work';
+import Contact from './components/Contact/Contact';
+import Footer  from './components/Footer/Footer';
 
 function App() {
+  const { dotRef, ringRef } = useCursor();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* Custom cursor elements */}
+      <div className="cursor-dot"  ref={dotRef}  />
+      <div className="cursor-ring" ref={ringRef} />
+
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Work />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }
 
