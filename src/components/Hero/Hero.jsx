@@ -9,7 +9,7 @@ function Hero() {
     <section className={styles.hero}>
       {/* ── Left: Text ── */}
       <div className={styles.text}>
-        <div className={styles.tag}>Available for opportunities</div>
+        {/* <div className={styles.tag}>Available for opportunities</div> */}
 
         <h1 className={styles.name}>
           Creative<br />

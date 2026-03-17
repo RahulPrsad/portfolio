@@ -135,3 +135,41 @@
   .work { padding: 5rem 1.5rem; }
   .grid { grid-template-columns: 1fr; }
 }
+/* Card top row */
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.cardDate {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: rgba(245, 240, 232, 0.3);
+  text-transform: uppercase;
+}
+
+/* GitHub button */
+.githubBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(232, 160, 32, 0.7);
+  text-decoration: none;
+  border: 1px solid rgba(232, 160, 32, 0.2);
+  padding: 0.4rem 0.9rem;
+  border-radius: 4px;
+  transition: color 0.3s, border-color 0.3s, background 0.3s;
+}
+
+.githubBtn:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+  background: rgba(232, 160, 32, 0.06);
+}

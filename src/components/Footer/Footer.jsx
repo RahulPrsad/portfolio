@@ -8,7 +8,7 @@ function Footer() {
   return (
     <footer className={styles.footer}>
       <span>© {year} {personalInfo.name}. All rights reserved.</span>
-      <span>Designed &amp; Built with ♥</span>
+      
     </footer>
   );
 }
