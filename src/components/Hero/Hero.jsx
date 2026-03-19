@@ -20,7 +20,7 @@ function Hero() {
         <p className={styles.role}>{personalInfo.role}</p>
 
         <p className={styles.desc}>
-          Crafting digital experiences that blend aesthetics with function.
+          Crafting digital experiences that blend aesthetics with function
           Passionate about building products that leave a lasting impression.
         </p>
 
